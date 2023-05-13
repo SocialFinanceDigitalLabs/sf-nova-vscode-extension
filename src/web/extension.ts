@@ -124,7 +124,7 @@ const setFileWatcher = () => {
 };
 
 function deleteFile(uri: vscode.Uri) {
-  console.debug("[stlite] Delete file: " + uri.fsPath);
+  console.debug("[stlite] Delete file: " + uri.path);
   if (panel == null) {
     return;
   }
@@ -132,7 +132,7 @@ function deleteFile(uri: vscode.Uri) {
   if (!workspaceFolder) {
     return;
   }
-  const relPath = path.relative(workspaceFolder.uri.fsPath, uri.fsPath);
+  const relPath = path.relative(workspaceFolder.uri.path, uri.path);
   console.debug("[stlite]  RelPath: " + relPath);
   panel.webview.postMessage({
     type: "file:delete",
@@ -143,7 +143,7 @@ function deleteFile(uri: vscode.Uri) {
 }
 
 const writeFile = async (uri: vscode.Uri) => {
-  console.debug("[stlite] Write file: " + uri.fsPath);
+  console.debug("[stlite] Write file: " + uri.path);
   if (panel == null) {
     return;
   }
@@ -152,7 +152,7 @@ const writeFile = async (uri: vscode.Uri) => {
   if (!workspaceFolder) {
     return;
   }
-  const relPath = path.relative(workspaceFolder.uri.fsPath, uri.fsPath);
+  const relPath = path.relative(workspaceFolder.uri.path, uri.path);
   const content = await vscode.workspace.fs.readFile(uri);
 
   if (relPath === requirementsFileName) {

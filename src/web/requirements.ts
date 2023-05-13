@@ -1,4 +1,6 @@
 import * as vscode from "vscode";
+import * as path from "path";
+
 const requirementsFileName = "requirements.txt";
 
 export function parseRequirementsTxt(content: string): string[] {
@@ -13,9 +15,10 @@ export const getRequirements = async (
   workspaceFolder: vscode.WorkspaceFolder,
   relDirPath: string
 ) => {
+  const reqPath = path.join(relDirPath, requirementsFileName)
   const reqUri = vscode.Uri.joinPath(
     workspaceFolder.uri,
-    `${relDirPath}/${requirementsFileName}`
+    reqPath
   );
 
   let requirements: string[] = [];

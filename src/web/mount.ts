@@ -3,17 +3,13 @@ import * as path from "path";
 import { getRequirements } from "./requirements";
 import { getPages } from "./pages";
 
-export function getDirectoryPath(filePath: string) {
-  const lastSlashIndex = filePath.lastIndexOf("/");
-  return filePath.substring(0, lastSlashIndex);
-}
 
 export const getMountOptions = async (
   fileUri: vscode.Uri,
   workspaceFolder: vscode.WorkspaceFolder
 ) => {
-  const relPath = path.relative(workspaceFolder.uri.fsPath, fileUri.fsPath);
-  const relDirPath = getDirectoryPath(relPath);
+  const relPath = path.relative(workspaceFolder.uri.path, fileUri.path);
+  const relDirPath =  path.dirname(relPath);
 
   // get requirements and pages content
   const requirements = await getRequirements(workspaceFolder, relDirPath);
