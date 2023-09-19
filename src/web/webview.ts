@@ -10,7 +10,7 @@ export function getWebviewContent(stliteVersion: string) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-        <title>stlite app</title>
+        <title>streamlit app</title>
         <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/@stlite/mountable@${stliteVersion}/build/stlite.css"

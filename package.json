@@ -1,14 +1,13 @@
 {
-  "name": "sf-stlite",
-  "displayName": "sf-stlite",
+  "name": "sf-nova",
+  "displayName": "SF-nova",
   "publisher": "SocialFinance",
   "description": "",
   "license": "SEE LICENSE IN LICENSE",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "repository": {
     "type": "git",
-    "url": "https://github.com/whitphx/stlite.git",
-    "directory": "packages/vscode-stlite"
+    "url": "https://github.com/SocialFinanceDigitalLabs/sf-nova-vscode-extension"
   },
   "engines": {
     "vscode": "^1.76.0"
@@ -17,41 +16,40 @@
     "Other"
   ],
   "keywords": [
-    "Streamlit", "stlite"
+    "Streamlit",
+    "stlite",
+    "sf-nova"
   ],
   "icon": "images/icon.png",
-  "sponsor": {
-    "url": "https://github.com/sponsors/whitphx"
-  },
   "activationEvents": [
-    "onView:stliteContainer"
+    "onView:sfnovaContainer"
   ],
   "browser": "./dist/web/extension.js",
   "contributes": {
     "viewsWelcome": [
       {
-        "view": "patchPreviewContainer",
-        "contents": "Run a preview of your stlite app. \n[Launch stlite preview](command:stlite.start)\n You should: \n-Have a python file opened and focused in the editor\n-Only run one app at a time\n-If you want to run a different app you should close the opened preview panel first"
+        "view": "sfnovaPreviewContainer",
+        "contents": "Run a preview of your streamlit app. \n[Launch preview](command:sfnova.start)\n You should: \n-Have a python file opened and focused in the editor\n-Only run one app at a time\n-If you want to run a different app you should close the opened preview panel first"
       },
       {
-        "view": "patchPreviewExplorer",
-        "contents": "Run a preview of your stlite app. \n[Launch stlite preview](command:stlite.start)\n You should: \n-Have a python file opened and focused in the editor\n-Only run one app at a time\n-If you want to run a different app you should close the opened preview panel first"
+        "view": "sfnovaPreviewExplorer",
+        "contents": "Run a preview of your streamlit app. \n[Launch preview](command:sfnova.start)\n You should: \n-Have a python file opened and focused in the editor\n-Only run one app at a time\n-If you want to run a different app you should close the opened preview panel first"
       }
     ],
     "views": {
-      "stliteContainer": [
+      "sfnovaContainer": [
         {
-          "id": "patchPreviewContainer",
-          "name": "Patch",
-          "command": "stlite.start",
+          "id": "sfnovaPreviewContainer",
+          "name": "SF-nova",
+          "command": "sfnova.start",
           "icon": "images/icon.png"
         }
       ],
       "explorer": [
         {
-          "id": "patchPreviewExplorer",
-          "name": "Patch",
-          "command": "stlite.start",
+          "id": "sfnovaPreviewExplorer",
+          "name": "SF-nova",
+          "command": "sfnova.start",
           "icon": "images/icon.png"
         }
       ]
@@ -59,22 +57,22 @@
     "viewsContainers": {
       "activitybar": [
         {
-          "id": "stliteContainer",
-          "title": "Patch",
+          "id": "sfnovaContainer",
+          "title": "SF-nova",
           "icon": "images/icon.png",
-          "command": "stlite.start",
-          "when": "view == patchPreview"
+          "command": "sfnova.start",
+          "when": "view == sfnovaPreview"
         }
       ]
     },
     "commands": [
       {
-        "command": "stlite.start",
-        "title": "launch stlite preview"
+        "command": "sfnova.start",
+        "title": "launch streamlit preview"
       }
     ],
     "configuration": {
-      "title": "stlite (Streamlit)"
+      "title": "sf-nova (Streamlit)"
     }
   },
   "scripts": {

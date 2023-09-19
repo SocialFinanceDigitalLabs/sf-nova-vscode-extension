@@ -14,10 +14,10 @@ let panel: vscode.WebviewPanel | undefined = undefined;
 let panelInitializedPromise = new PromiseDelegate<void>();
 
 export function activate(context: vscode.ExtensionContext) {
-  console.log('"vscode-stlite" is now active in the web extension host.');
+  console.log('"vscode-SF-nova" is now active in the web extension host.');
 
   const disposable = vscode.commands.registerCommand(
-    "stlite.start",
+    "sfnova.start",
     async () => {
       if (panel) {
         panel.reveal();
@@ -42,8 +42,8 @@ export function activate(context: vscode.ExtensionContext) {
       }
 
       panel = vscode.window.createWebviewPanel(
-        "stlite",
-        "stlite preview",
+        "sf-nova",
+        "Streamlit preview",
         vscode.ViewColumn.Beside,
         {
           enableScripts: true,
@@ -80,7 +80,7 @@ export function activate(context: vscode.ExtensionContext) {
               panel?.webview.postMessage({
                 stCommVersion: 1,
                 type: "SET_PAGE_LINK_BASE_URL",
-                pageLinkBaseUrl: "vscode-webview://stlite",
+                pageLinkBaseUrl: "vscode-webview://sf-nova",
               });
               return;
             }

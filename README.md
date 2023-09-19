@@ -1,6 +1,6 @@
-# Welcome to the Streamlit Preview VSCode Extension, powered by stlite
+# Welcome to the Streamlit Preview VSCode Extension
 
-This VSCode extension is based on the [original stlite extension](https://marketplace.visualstudio.com/items?itemName=whitphx.vscode-stlite).
+This VSCode extension is an adaptation of the [original stlite extension](https://marketplace.visualstudio.com/items?itemName=whitphx.vscode-stlite) in order to work on vscode web editor.
 
 It provides a convenient way to preview Streamlit apps in an integrated VSCode panel. It is powered by a Wasm/Pyodide-ported version of Streamlit, "stlite", that runs on the browser without servers. This unique feature allows the extension to run on both VSCode desktop and VSCode Web, such as on the Github.dev, without the need for setup of Python or other dependencies. This makes serverless and full-remote development of Streamlit apps a reality.
 
