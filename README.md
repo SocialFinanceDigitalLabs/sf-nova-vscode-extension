@@ -9,8 +9,8 @@ It provides a convenient way to preview Streamlit apps in an integrated VSCode p
 To use this extension, follow these steps:
 
 1. Open the python entry file for your app
-1. click on the stlite icon on the activity bar and click on the "Launch stlite preview" button
-5. The preview of your Streamlit app will be shown in the integrated VSCode panel.
+2. click on the sf-nova icon on the activity bar and click on the "Launch preview" button
+3. The preview of your Streamlit app will be shown in the integrated VSCode panel.
 
 ## Python Dependencies
 
